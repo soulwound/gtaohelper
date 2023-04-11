@@ -1,0 +1,43 @@
+<VanScreen>:
+    Label:
+        text: 'van'
+    BoxLayout:
+        size_hint: 1, 0.1
+        Button:
+            text: 'van'
+            on_press: root.manager.current = 'van_screen'
+        Button:
+            text: 'main'
+            on_press: root.manager.current = 'main_screen'
+        Button:
+            text: 'dealers'
+            on_press: root.manager.current = 'dealers_screen'
+
+<MainScreen>:
+    Label:
+        text: 'Main'
+    BoxLayout:
+        size_hint: 1, 0.1
+        Button:
+            text: 'van'
+            on_press: root.manager.current = 'van_screen'
+        Button:
+            text: 'main'
+            on_press: root.manager.current = 'main_screen'
+        Button:
+            text: 'dealers'
+            on_press: root.manager.current = 'dealers_screen'
+<DealersScreen>:
+    Label:
+        text: 'Dealers'
+    BoxLayout:
+        size_hint: 1, 0.1
+        Button:
+            text: 'van'
+            on_press: root.manager.current = 'van_screen'
+        Button:
+            text: 'main'
+            on_press: root.manager.current = 'main_screen'
+        Button:
+            text: 'dealers'
+            on_press: root.manager.current = 'dealers_screen'
