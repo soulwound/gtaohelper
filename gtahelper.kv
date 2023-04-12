@@ -1,43 +1,76 @@
 <VanScreen>:
-    Label:
-        text: root.vans
-    BoxLayout:
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            text: root.vans
+            heigh
+        FitImage:
+            source: root.source
+            size_hint: 0.5, 0.5
+    MDBoxLayout:
         size_hint: 1, 0.1
-        Button:
+        MDRectangleFlatIconButton:
             text: 'van'
             on_press: root.manager.current = 'van_screen'
-        Button:
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "purple"
+        MDRectangleFlatIconButton:
             text: 'main'
             on_press: root.manager.current = 'main_screen'
-        Button:
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "blue"
+        MDRectangleFlatIconButton:
             text: 'dealers'
             on_press: root.manager.current = 'dealers_screen'
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "blue"
 
 <MainScreen>:
-    Label:
+    MDLabel:
         text: 'Main'
-    BoxLayout:
+    MDBoxLayout:
         size_hint: 1, 0.1
-        Button:
+        MDRectangleFlatIconButton:
             text: 'van'
             on_press: root.manager.current = 'van_screen'
-        Button:
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "blue"
+        MDRectangleFlatIconButton:
             text: 'main'
             on_press: root.manager.current = 'main_screen'
-        Button:
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "purple"
+        MDRectangleFlatIconButton:
             text: 'dealers'
             on_press: root.manager.current = 'dealers_screen'
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "blue"
 <DealersScreen>:
-    Label:
+    MDLabel:
         text: 'Dealers'
-    BoxLayout:
+    MDBoxLayout:
         size_hint: 1, 0.1
-        Button:
+        MDRectangleFlatIconButton:
             text: 'van'
             on_press: root.manager.current = 'van_screen'
-        Button:
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "blue"
+        MDRectangleFlatIconButton:
             text: 'main'
             on_press: root.manager.current = 'main_screen'
-        Button:
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "blue"
+        MDRectangleFlatIconButton:
             text: 'dealers'
             on_press: root.manager.current = 'dealers_screen'
+            size_hint: 0.33, 1
+            text_color: "black"
+            line_color: "purple"

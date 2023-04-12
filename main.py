@@ -1,14 +1,10 @@
 from bs4 import BeautifulSoup  # для парсинга полученного кода
-from kivy.uix.label import Label
-from kivymd.uix.button import MDFloatingActionButton
+from kivymd.app import MDApp
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.screenmanager import MDScreenManager
 from requests import get  # для получения html-кода
-from kivy.app import App
-from kivy.lang import Builder
-from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 import threading
-from kivy.properties import StringProperty
-from kivy.uix.button import Button
 
 GUN_VANS_URL = 'https://gtalens.com/map/gun-vans'
 VANS_COUNT = 30
@@ -34,26 +30,25 @@ class Van:
 
 
 van = Van()
-process = threading.Thread(target=van.get_van_location, daemon=True)
-process.start()
 
 
-class VanScreen(Screen):
+class VanScreen(MDScreen):
     vans = van.get_van_location()
+    source = f'img\\{vans.split()[0]}.png'
 
 
-class MainScreen(Screen):
+class MainScreen(MDScreen):
     pass
 
 
-class DealersScreen(Screen):
+class DealersScreen(MDScreen):
     pass
 
 
-class GtaHelperApp(App):
+class GtaHelperApp(MDApp):
 
     def build(self):
-        sm = ScreenManager(transition=FadeTransition())
+        sm = MDScreenManager(transition=FadeTransition())
         sm.add_widget(VanScreen(name='van_screen'))
         sm.add_widget(MainScreen(name='main_screen'))
         sm.add_widget(DealersScreen(name='dealers_screen'))
