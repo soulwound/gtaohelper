@@ -1,4 +1,6 @@
 from bs4 import BeautifulSoup  # для парсинга полученного кода
+from kivy.uix.label import Label
+from kivymd.uix.button import MDFloatingActionButton
 from requests import get  # для получения html-кода
 from kivy.app import App
 from kivy.lang import Builder
@@ -37,7 +39,7 @@ process.start()
 
 
 class VanScreen(Screen):
-    pass
+    vans = van.get_van_location()
 
 
 class MainScreen(Screen):
